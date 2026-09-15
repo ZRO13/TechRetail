@@ -1,0 +1,22 @@
+{
+  "queryset": {
+    "version": "1.0.0",
+    "dataSources": [
+      {
+        "id": "a6f4e5e2-1df1-4ce5-b583-0e945f16cf26",
+        "clusterUri": "https://trd-7tarmfmgambh4x3nsg.z3.kusto.fabric.microsoft.com",
+        "type": "Fabric",
+        "databaseItemId": "e3102d2b-1620-412d-8886-54af6c28fad6"
+      }
+    ],
+    "tabs": [
+      {
+        "id": "b338e12e-8dbc-4f86-9c36-5cadf13925be",
+        "content": "ventas_tiempo_real\n| take 10",
+        "title": "Tab",
+        "dataSourceId": "a6f4e5e2-1df1-4ce5-b583-0e945f16cf26"
+      }
+    ],
+    "querysetType": "Embedded"
+  }
+}

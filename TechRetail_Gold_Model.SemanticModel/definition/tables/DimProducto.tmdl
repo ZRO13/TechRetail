@@ -1,0 +1,75 @@
+table DimProducto
+	lineageTag: 49a9e3b5-ee30-420f-87ff-aa6626eef6cc
+	sourceLineageTag: [dbo].[DimProducto]
+
+	column producto_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 4e8ccf95-c08a-41cf-b7e1-daedfff0ef7a
+		sourceLineageTag: producto_key
+		summarizeBy: none
+		sourceColumn: producto_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column sku
+		dataType: string
+		lineageTag: 3754c4a5-187d-4c3e-9942-db7f7a986862
+		sourceLineageTag: sku
+		summarizeBy: none
+		sourceColumn: sku
+
+		annotation SummarizationSetBy = Automatic
+
+	column nombre_producto
+		dataType: string
+		lineageTag: 5ef753ea-3503-4fd9-a656-bd79e8c5cb26
+		sourceLineageTag: nombre_producto
+		summarizeBy: none
+		sourceColumn: nombre_producto
+
+		annotation SummarizationSetBy = Automatic
+
+	column categoria
+		dataType: string
+		lineageTag: cfcdfcb7-2a8f-4622-a250-30883c60b463
+		sourceLineageTag: categoria
+		summarizeBy: none
+		sourceColumn: categoria
+
+		annotation SummarizationSetBy = Automatic
+
+	column subcategoria
+		dataType: string
+		lineageTag: 8f27dc9e-e270-420a-9f5b-8ef5664753ba
+		sourceLineageTag: subcategoria
+		summarizeBy: none
+		sourceColumn: subcategoria
+
+		annotation SummarizationSetBy = Automatic
+
+	column marca
+		dataType: string
+		lineageTag: dff35c79-1a7a-4969-a328-aa9d6c5c0954
+		sourceLineageTag: marca
+		summarizeBy: none
+		sourceColumn: marca
+
+		annotation SummarizationSetBy = Automatic
+
+	column costo_unitario
+		dataType: string
+		lineageTag: 81c23b76-49dc-4f26-b5aa-f3d3921e8103
+		sourceLineageTag: costo_unitario
+		summarizeBy: none
+		sourceColumn: costo_unitario
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimProducto = entity
+		mode: directLake
+		source
+			entityName: DimProducto
+			schemaName: dbo
+			expressionSource: 'DirectLake - WarehouseGold'
+

@@ -1,0 +1,79 @@
+table DimFecha
+	lineageTag: d5c34ca6-effd-4fef-8116-1bf7ffdc63f6
+	sourceLineageTag: [dbo].[DimFecha]
+
+	column fecha_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 670e951e-0d4d-4c3e-9668-b2077e9d2d43
+		sourceLineageTag: fecha_key
+		summarizeBy: none
+		sourceColumn: fecha_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 71598763-76eb-4132-b81d-63d3b4361c91
+		sourceLineageTag: fecha
+		summarizeBy: none
+		sourceColumn: fecha
+
+		annotation SummarizationSetBy = Automatic
+
+	column anio
+		dataType: int64
+		formatString: 0
+		lineageTag: a8af1c80-1ca6-4f63-bf74-f36f384ce009
+		sourceLineageTag: anio
+		summarizeBy: none
+		sourceColumn: anio
+
+		annotation SummarizationSetBy = Automatic
+
+	column mes
+		dataType: int64
+		formatString: 0
+		lineageTag: 90049629-f8b7-45ef-a25f-8e08e5df155a
+		sourceLineageTag: mes
+		summarizeBy: none
+		sourceColumn: mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column trimestre
+		dataType: int64
+		formatString: 0
+		lineageTag: 74369781-eef0-43a6-ae8f-33453d6815dc
+		sourceLineageTag: trimestre
+		summarizeBy: none
+		sourceColumn: trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column nombre_mes
+		dataType: string
+		lineageTag: defa7315-48d7-4ca8-87b7-7e21fa15e4f7
+		sourceLineageTag: nombre_mes
+		summarizeBy: none
+		sourceColumn: nombre_mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column dia_semana
+		dataType: string
+		lineageTag: 640037ff-8b09-4690-acf8-ff8c23279d82
+		sourceLineageTag: dia_semana
+		summarizeBy: none
+		sourceColumn: dia_semana
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimFecha = entity
+		mode: directLake
+		source
+			entityName: DimFecha
+			schemaName: dbo
+			expressionSource: 'DirectLake - WarehouseGold'
+

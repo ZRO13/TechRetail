@@ -1,0 +1,7 @@
+role México
+	modelPermission: read
+
+	tablePermission DimTienda = [region] = "México"
+
+	annotation PBI_Id = f724f9e6f1f44a4790c670820ed64db4
+

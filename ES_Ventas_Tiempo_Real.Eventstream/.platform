@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Eventstream",
+    "displayName": "ES_Ventas_Tiempo_Real"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4195d237-ce3a-9005-4494-efb5aee1d81e"
+  }
+}

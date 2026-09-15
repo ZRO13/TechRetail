@@ -1,0 +1,123 @@
+table FactVentas
+	lineageTag: cc77443e-b452-4518-907f-526d2cf5677e
+	sourceLineageTag: [dbo].[FactVentas]
+
+	column transaccion_id
+		dataType: string
+		lineageTag: a4002f98-899f-4d3f-b945-e5897d89671e
+		sourceLineageTag: transaccion_id
+		summarizeBy: none
+		sourceColumn: transaccion_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 363ca930-7d2f-45c9-a906-1226434654e7
+		sourceLineageTag: fecha_key
+		summarizeBy: none
+		sourceColumn: fecha_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column tienda_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 55aa6f32-7eb8-49e9-96ce-c8f2ba58cae9
+		sourceLineageTag: tienda_key
+		summarizeBy: none
+		sourceColumn: tienda_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column producto_key
+		dataType: int64
+		formatString: 0
+		lineageTag: fdbd6fb4-afad-4d1c-b9ea-870c32973ab8
+		sourceLineageTag: producto_key
+		summarizeBy: none
+		sourceColumn: producto_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column empleado_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 0c08d656-c545-4558-aae0-aa04a49d5ea6
+		sourceLineageTag: empleado_key
+		summarizeBy: none
+		sourceColumn: empleado_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column cliente_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 08da177d-8f6c-41d6-a3b6-092ee49db75e
+		sourceLineageTag: cliente_key
+		summarizeBy: none
+		sourceColumn: cliente_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column cantidad
+		dataType: string
+		lineageTag: 3c8001bb-7341-419e-a1bf-6b17bc0daf72
+		sourceLineageTag: cantidad
+		summarizeBy: none
+		sourceColumn: cantidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column precio_unitario
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 70ebb3a4-eb32-4fdf-b952-6971311bab9e
+		sourceLineageTag: precio_unitario
+		summarizeBy: sum
+		sourceColumn: precio_unitario
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column descuento_pct
+		dataType: int64
+		formatString: 0
+		lineageTag: c8eccdc3-ae4a-43f4-9a41-8a2f56bb34c3
+		sourceLineageTag: descuento_pct
+		summarizeBy: sum
+		sourceColumn: descuento_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column venta_total
+		dataType: double
+		lineageTag: cb2ace37-5766-4c37-b1ec-938f64beacbd
+		sourceLineageTag: venta_total
+		summarizeBy: sum
+		sourceColumn: venta_total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column costo_total
+		dataType: double
+		lineageTag: 9e02ce53-ad57-4c1c-9907-d66e4ef3a160
+		sourceLineageTag: costo_total
+		summarizeBy: sum
+		sourceColumn: costo_total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition FactVentas = entity
+		mode: directLake
+		source
+			entityName: FactVentas
+			schemaName: dbo
+			expressionSource: 'DirectLake - WarehouseGold'
+

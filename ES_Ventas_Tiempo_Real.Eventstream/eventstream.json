@@ -1,0 +1,107 @@
+{
+  "sources": [
+    {
+      "id": "e6bf9723-1fb4-4fec-91ad-8231e732758c",
+      "name": "Origen_Generador_POS",
+      "type": "CustomEndpoint",
+      "properties": {}
+    }
+  ],
+  "destinations": [
+    {
+      "id": "5bf5ae5e-9253-4242-9fdb-4934357b2245",
+      "name": "Eventhouse",
+      "type": "Eventhouse",
+      "properties": {
+        "dataIngestionMode": "ProcessedIngestion",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "itemId": "6c28fad6-54af-8886-412d-1620e3102d2b",
+        "databaseName": "EH_Ventas",
+        "tableName": "ventas_tiempo_real",
+        "inputSerialization": {
+          "type": "Json",
+          "properties": {
+            "encoding": "UTF8"
+          }
+        }
+      },
+      "inputNodes": [
+        {
+          "name": "ES_Ventas_Tiempo_Real-stream"
+        }
+      ],
+      "inputSchemas": [
+        {
+          "name": "ES_Ventas_Tiempo_Real-stream",
+          "schema": {
+            "columns": [
+              {
+                "name": "evento_id",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "timestamp_evento",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "tienda_id",
+                "type": "BigInt",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "empleado_id",
+                "type": "BigInt",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "sku",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "cantidad",
+                "type": "BigInt",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "precio_unitario",
+                "type": "Float",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "descuento_pct",
+                "type": "BigInt",
+                "fields": null,
+                "items": null
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "streams": [
+    {
+      "id": "6ab19307-0581-4a3f-96a3-95d2a8ae6273",
+      "name": "ES_Ventas_Tiempo_Real-stream",
+      "type": "DefaultStream",
+      "properties": {},
+      "inputNodes": [
+        {
+          "name": "Origen_Generador_POS"
+        }
+      ]
+    }
+  ],
+  "operators": [],
+  "compatibilityLevel": "1.1"
+}

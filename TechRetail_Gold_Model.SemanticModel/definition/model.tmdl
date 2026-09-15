@@ -1,0 +1,29 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["DirectLake - WarehouseGold"]
+
+annotation PBI_ProTooling = ["RemoteModeling","DirectLakeOnOneLakeCreatedInDesktop"]
+
+ref table DimTienda
+ref table DimProducto
+ref table DimEmpleado
+ref table DimCliente
+ref table DimFecha
+ref table FactVentas
+ref table ventas_diarias_por_tienda
+ref table real_vs_presupuesto
+
+ref role Colombia
+ref role México
+ref role Argentina
+ref role Chile
+ref role Perú
+

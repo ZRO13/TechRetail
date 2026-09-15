@@ -1,0 +1,20 @@
+relationship 651a1589-fb78-360f-798e-813dd377e622
+	fromColumn: FactVentas.tienda_key
+	toColumn: DimTienda.tienda_key
+
+relationship 22889bce-4337-9b27-49a4-322ebf711f92
+	fromColumn: FactVentas.producto_key
+	toColumn: DimProducto.producto_key
+
+relationship bf35227d-d67e-4c74-5fa6-35420deba94a
+	fromColumn: FactVentas.fecha_key
+	toColumn: DimFecha.fecha_key
+
+relationship 4673615a-0a9c-5245-b112-1e2a4426c81b
+	fromColumn: FactVentas.empleado_key
+	toColumn: DimEmpleado.empleado_key
+
+relationship d834d48f-6fac-dfaa-b661-73f7ba8af8da
+	fromColumn: FactVentas.cliente_key
+	toColumn: DimCliente.cliente_key
+

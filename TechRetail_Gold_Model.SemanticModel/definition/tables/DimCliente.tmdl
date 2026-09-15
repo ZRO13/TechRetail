@@ -1,0 +1,67 @@
+table DimCliente
+	lineageTag: 83c24403-d02d-4b17-a661-84cdf8f8c645
+	sourceLineageTag: [dbo].[DimCliente]
+
+	column cliente_key
+		dataType: int64
+		formatString: 0
+		lineageTag: af8978bf-a5b6-4ad0-bdc6-5f8839e1263c
+		sourceLineageTag: cliente_key
+		summarizeBy: none
+		sourceColumn: cliente_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column cliente_id
+		dataType: string
+		lineageTag: 5fe8928b-fcc9-4133-ad46-afdbebe3f043
+		sourceLineageTag: cliente_id
+		summarizeBy: none
+		sourceColumn: cliente_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column nombre_completo
+		dataType: string
+		lineageTag: edd34e36-a04f-4985-a9fe-36b857b8b44d
+		sourceLineageTag: nombre_completo
+		summarizeBy: none
+		sourceColumn: nombre_completo
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha_registro
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 67671fbe-d8a6-47fa-ad36-66429fcfba4e
+		sourceLineageTag: fecha_registro
+		summarizeBy: none
+		sourceColumn: fecha_registro
+
+		annotation SummarizationSetBy = Automatic
+
+	column tier_lealtad
+		dataType: string
+		lineageTag: 379d5ccd-2c05-4cfd-8298-532783eccf97
+		sourceLineageTag: tier_lealtad
+		summarizeBy: none
+		sourceColumn: tier_lealtad
+
+		annotation SummarizationSetBy = Automatic
+
+	column ciudad
+		dataType: string
+		lineageTag: 95cde0b3-84c8-491e-ae17-00b349cefde6
+		sourceLineageTag: ciudad
+		summarizeBy: none
+		sourceColumn: ciudad
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimCliente = entity
+		mode: directLake
+		source
+			entityName: DimCliente
+			schemaName: dbo
+			expressionSource: 'DirectLake - WarehouseGold'
+

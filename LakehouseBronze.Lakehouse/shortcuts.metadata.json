@@ -1,0 +1,15 @@
+[
+  {
+    "name": "ventas_tiempo_real",
+    "path": "/Tables/bronze",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ventas_tiempo_real",
+        "itemId": "6c28fad6-54af-8886-412d-1620e3102d2b",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "KustoDatabase"
+      }
+    }
+  }
+]

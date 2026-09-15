@@ -1,0 +1,85 @@
+table DimTienda
+	lineageTag: 6a3287ff-2142-4673-a34b-682478f68566
+	sourceLineageTag: [dbo].[DimTienda]
+
+	column tienda_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 5dbdb58f-e025-4fef-903c-eeb6500db0b1
+		sourceLineageTag: tienda_key
+		summarizeBy: none
+		sourceColumn: tienda_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column tienda_id
+		dataType: string
+		lineageTag: 0d66e10b-dae5-4aec-8f68-53391187deef
+		sourceLineageTag: tienda_id
+		summarizeBy: none
+		sourceColumn: tienda_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column nombre_tienda
+		dataType: string
+		lineageTag: 28063026-9f3f-4b7d-87e0-f266e4b9e5bf
+		sourceLineageTag: nombre_tienda
+		summarizeBy: none
+		sourceColumn: nombre_tienda
+
+		annotation SummarizationSetBy = Automatic
+
+	column ciudad
+		dataType: string
+		lineageTag: 4af26b08-f692-450a-9edd-26c392666a2f
+		sourceLineageTag: ciudad
+		summarizeBy: none
+		sourceColumn: ciudad
+
+		annotation SummarizationSetBy = Automatic
+
+	column pais
+		dataType: string
+		lineageTag: a7e5c899-bf36-4a63-8ce6-210859e87570
+		sourceLineageTag: pais
+		summarizeBy: none
+		sourceColumn: pais
+
+		annotation SummarizationSetBy = Automatic
+
+	column region
+		dataType: string
+		lineageTag: 2d5c4602-3c65-4076-90e3-e7a0bb77eb6c
+		sourceLineageTag: region
+		summarizeBy: none
+		sourceColumn: region
+
+		annotation SummarizationSetBy = Automatic
+
+	column formato_tienda
+		dataType: string
+		lineageTag: 1549a0c4-d393-4c71-8d11-20b9dbbcca0e
+		sourceLineageTag: formato_tienda
+		summarizeBy: none
+		sourceColumn: formato_tienda
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha_apertura
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 09a0fe00-86d1-4a93-853e-9b9fc5c38920
+		sourceLineageTag: fecha_apertura
+		summarizeBy: none
+		sourceColumn: fecha_apertura
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimTienda = entity
+		mode: directLake
+		source
+			entityName: DimTienda
+			schemaName: dbo
+			expressionSource: 'DirectLake - WarehouseGold'
+

@@ -1,0 +1,61 @@
+table real_vs_presupuesto
+	lineageTag: 5d9844a9-cd59-4a9d-b94a-ac9f5371f043
+	sourceLineageTag: [dbo].[real_vs_presupuesto]
+
+	column tienda_id
+		dataType: string
+		lineageTag: 2b73db17-a21a-4f89-975e-1791c9877071
+		sourceLineageTag: tienda_id
+		summarizeBy: none
+		sourceColumn: tienda_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column anio_mes
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 19c5447f-96a8-49b2-8b02-ad985a2dfdba
+		sourceLineageTag: anio_mes
+		summarizeBy: none
+		sourceColumn: anio_mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column venta_total_real
+		dataType: double
+		lineageTag: 662d0267-0467-4981-9e11-cde11adc3e1c
+		sourceLineageTag: venta_total_real
+		summarizeBy: sum
+		sourceColumn: venta_total_real
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column meta_venta
+		dataType: string
+		lineageTag: 9d2b8dd3-4fb0-46b0-ba09-a13d3dd3623a
+		sourceLineageTag: meta_venta
+		summarizeBy: none
+		sourceColumn: meta_venta
+
+		annotation SummarizationSetBy = Automatic
+
+	column variacion_pct
+		dataType: double
+		lineageTag: 8cdfd5e0-a22f-41f8-b8f2-32010cf9e8d5
+		sourceLineageTag: variacion_pct
+		summarizeBy: sum
+		sourceColumn: variacion_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition real_vs_presupuesto = entity
+		mode: directLake
+		source
+			entityName: real_vs_presupuesto
+			schemaName: dbo
+			expressionSource: 'DirectLake - WarehouseGold'
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "TechRetail_Gold_Model"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "dfe0003e-2cbb-a00a-416d-c9f5f4fbe447"
+  }
+}

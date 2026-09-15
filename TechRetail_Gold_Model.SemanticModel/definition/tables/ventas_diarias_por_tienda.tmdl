@@ -1,0 +1,53 @@
+table ventas_diarias_por_tienda
+	lineageTag: 8f8a7eee-3796-4665-8f13-184cf5e2f394
+	sourceLineageTag: [dbo].[ventas_diarias_por_tienda]
+
+	column tienda_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 87262d66-50ca-42f3-9c9f-7d3bfe1fb82c
+		sourceLineageTag: tienda_key
+		summarizeBy: sum
+		sourceColumn: tienda_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 2b38bd32-1e5b-43e4-8530-7db276ab7075
+		sourceLineageTag: fecha_key
+		summarizeBy: sum
+		sourceColumn: fecha_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column venta_total
+		dataType: double
+		lineageTag: 4766405e-af1b-49eb-a290-c663d9446454
+		sourceLineageTag: venta_total
+		summarizeBy: sum
+		sourceColumn: venta_total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column unidades
+		dataType: double
+		lineageTag: 201a6628-362d-4742-bfbe-8992d857621a
+		sourceLineageTag: unidades
+		summarizeBy: sum
+		sourceColumn: unidades
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition ventas_diarias_por_tienda = entity
+		mode: directLake
+		source
+			entityName: ventas_diarias_por_tienda
+			schemaName: dbo
+			expressionSource: 'DirectLake - WarehouseGold'
+
